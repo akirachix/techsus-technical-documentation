@@ -12,40 +12,39 @@ theme:
     text: Nunito
     code: Fira Mono
   features:
-    - navigation.sections
     - navigation.instant
-    - navigation.expand
-    - toc.integrate
+    - navigation.top
+    - toc.follow
+    - content.code.copy
     - search.highlight
     - search.suggest
     - search.share
+
+extra:
+  generator: false
 
 extra_css:
   - styles/extra.css
 
 nav:
   - Home: index.md
-  - Product:
-      - Overview: overview.md
-      - How It Works: how-it-works.md
-      - Features: features.md
-  - Design:
-      - Architecture: architecture.md
-      - Data Model: data-model.md
-      - Brand Guideline: brand-guideline.md
-  - Engineering:
-      - Frontend (PWA): frontend.md
-      - Backend & Database: backend.md
-      - AI Tutor: ai-tutor.md
-  - Quality & Security:
-      - Security & Compliance: security.md
-      - QA Process: qa-process.md
-  - Operations:
-      - Getting Started: getting-started.md
-      - Code Standards: code-standards.md
-      - Deployment & DevOps: deployment-process.md
+  - How It Works: how-it-works.md
+  - Features: features.md
+  - Architecture: architecture.md
+  - Brand Guideline: brand-guideline.md
+  - Frontend (PWA): frontend.md
+  - Backend: backend.md
+  - Security & Compliance: security.md
+  - QA Process: qa-process.md
+  - Code Standards: code-standards.md
+  - Deployment & DevOps: deployment-process.md
 
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
