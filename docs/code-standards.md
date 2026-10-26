@@ -93,7 +93,7 @@ The same checks run automatically on every pull request, in both repositories.
 2. The pipeline runs the checks for that repository: lint, format check and tests for the backend, lint, format check and build for the frontend.
 3. If any step fails, the pull request is marked as failed and must be fixed before merging.
 4. When all steps pass and a teammate approves, the change can be merged into `main`.
-5. The merge triggers deployment, as described in [Deployment & DevOps](deployment-devops.md).
+5. The merge triggers deployment, as described in [Deployment & DevOps](deployment-process.md).
 
 ```text
 Backend:   push --> lint --> format check --> tests + coverage --> review --> merge --> deploy
