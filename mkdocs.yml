@@ -12,6 +12,10 @@ theme:
     text: Nunito
     code: Fira Mono
   features:
+    - navigation.instant
+    - navigation.top
+    - toc.follow
+    - content.code.copy
     - navigation.sections
     - navigation.instant
     - navigation.expand
@@ -20,11 +24,31 @@ theme:
     - search.suggest
     - search.share
 
+extra:
+  generator: false
+
 extra_css:
   - styles/extra.css
 
 nav:
   - Home: index.md
+  - How It Works: how-it-works.md
+  - Features: features.md
+  - Architecture: architecture.md
+  - Brand Guideline: brand-guideline.md
+  - Frontend (PWA): frontend.md
+  - Backend: backend.md
+  - Security & Compliance: security.md
+  - QA Process: qa-process.md
+  - Code Standards: code-standards.md
+  - Deployment & DevOps: deployment-process.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
   - Product:
       - Overview: overview.md
       - How It Works: how-it-works.md
@@ -51,4 +75,5 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
+  - pymdownx.superfences
   - pymdownx.superfences
