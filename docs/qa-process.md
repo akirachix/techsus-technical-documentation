@@ -1,6 +1,6 @@
-# Redu Quality Assurance Process
+# Quality Assurance Process
 
-## 1. Purpose
+## Purpose
 
 The Redu Quality Assurance (QA) process ensures that the informational website and student Progressive Web App (PWA) are reliable, accessible, understandable and visually consistent across the devices and connectivity conditions expected by learners.
 
@@ -8,7 +8,7 @@ QA checks more than whether the application loads. It confirms that learners can
 
 The QA process also protects learner privacy by checking that one learner cannot access another learner’s account, progress, saved content or personal information.
 
-## 2. QA Scope
+## QA scope
 
 The frontend QA process covers:
 
@@ -28,7 +28,7 @@ The frontend QA process covers:
 - Contact-form behaviour on the informational website.
 - Regression testing after frontend changes.
 
-## 3. QA Approach
+## QA approach
 
 Testing should take place throughout development rather than only before release.
 
@@ -56,7 +56,7 @@ Complete QA sign-off
 
 Each feature should be tested from the learner’s perspective. The team should verify not only whether the technical action succeeds, but also whether the user understands what happened.
 
-## 4. Test Environments
+## Test environments
 
 Testing should include the main environments used by Redu learners and project stakeholders.
 
@@ -83,7 +83,7 @@ Recommended viewport sizes are:
 1440 × 900 — desktop
 ~~~
 
-## 5. Functional Testing
+## Functional testing
 
 Functional testing confirms that every important control performs the correct action and gives the user useful feedback.
 
@@ -106,7 +106,7 @@ The team should test:
 
 Each flow should be tested under normal, invalid, empty, loading and interrupted conditions.
 
-### 5.1 Contact-Form Testing
+### Contact-form testing
 
 The QA team should confirm that:
 
@@ -129,7 +129,7 @@ Thank you for contacting the Redu team. We have received your message.
 We could not send your message. Please check your connection and try again.
 ~~~
 
-## 6. Student User-Flow Testing
+## Student user-flow testing
 
 The core learner journey should be tested from beginning to end.
 
@@ -157,7 +157,7 @@ The core learner journey should be tested from beginning to end.
 
 The flow should be tested with both a new learner and a returning learner.
 
-## 7. Visual QA
+## Visual QA
 
 Visual QA confirms that the implementation follows the approved Redu design and brand guidelines.
 
@@ -185,7 +185,7 @@ The informational website and the student PWA may use different layouts, but the
 
 Visual testing should compare the implementation with the approved design, wireframe or component specification rather than relying only on personal preference.
 
-## 8. Responsive Testing
+## Responsive testing
 
 The Redu interface must remain usable on shared smartphones, tablets and desktop computers.
 
@@ -206,7 +206,7 @@ QA should confirm that:
 
 The interface must not assume that the learner has a large screen, a mouse, a keyboard or a fast connection.
 
-## 9. Accessibility Testing
+## Accessibility testing
 
 Redu should follow WCAG 2.1 AA accessibility principles where applicable.
 
@@ -230,7 +230,7 @@ QA should check:
 
 For example, a completed lesson should include a completion label or icon in addition to a green colour. An offline state should display a text label such as `Offline` or `Saved on this device`.
 
-## 10. PWA Testing
+## PWA testing
 
 The PWA should be tested in both the browser and installed application modes.
 
@@ -252,7 +252,7 @@ QA should confirm that:
 
 Next.js bundles the application during the build process. The service worker is responsible for caching the app shell, approved static resources and offline content. It does not replace Next.js or duplicate the framework’s bundling process.
 
-## 11. Cache Storage and IndexedDB Testing
+## Cache storage and IndexedDB testing
 
 The PWA uses different browser storage mechanisms for different types of data.
 
@@ -278,7 +278,7 @@ QA should verify that:
 - Storage errors produce a clear message.
 - Corrupted or incomplete content is not treated as usable.
 
-## 12. Offline Package Testing
+## Offline package testing
 
 Offline packages must be tested before being made available to learners.
 
@@ -298,7 +298,7 @@ QA should verify that:
 - Withdrawn or outdated packages are handled safely.
 - The learner can remove an offline package when appropriate.
 
-## 13. Progress Synchronisation Testing
+## Progress synchronisation testing
 
 Offline progress must be saved locally and synchronised safely when the connection returns.
 
@@ -335,7 +335,7 @@ QA should also test:
 
 The client device timestamp should not be treated as the authoritative ordering mechanism. The server should record when the event was received and processed.
 
-## 14. Assessment Testing
+## Assessment testing
 
 Assessment testing should confirm that learner answers and progress are not lost.
 
@@ -355,7 +355,7 @@ QA should test:
 - Preventing duplicate attempts caused by repeated clicks.
 - Preserving an offline attempt until it can be synchronised.
 
-## 15. AI Tutor Testing
+## AI tutor testing
 
 The AI tutor should be tested as a learning-support feature rather than as an unrestricted chatbot.
 
@@ -373,7 +373,7 @@ QA should confirm that:
 - Personal information is not unnecessarily included in the AI request.
 - The interface does not claim that the AI response is always correct.
 
-## 16. Authentication and Privacy Testing
+## Authentication and privacy testing
 
 The frontend must protect learner information.
 
@@ -392,7 +392,7 @@ QA should confirm that:
 - AI requests do not include unnecessary personal information.
 - Protected data is not included in public website pages.
 
-## 17. Performance Testing
+## Performance testing
 
 Performance testing is important because Redu targets learners who may use low-cost devices and slow or unreliable networks.
 
@@ -412,9 +412,9 @@ QA should review:
 
 The application should load content progressively. It should not load every subject, topic and lesson at the same time when the learner has selected only one subject.
 
-## 18. Defect Severity
+## Defect severity
 
-### 18.1 Critical
+### Critical
 
 The product cannot be used or a serious privacy or security problem exists.
 
@@ -426,7 +426,7 @@ Examples:
 - Authentication exposes sensitive information.
 - Offline data is corrupted.
 
-### 18.2 High
+### High
 
 A major learning or product flow is blocked.
 
@@ -438,7 +438,7 @@ Examples:
 - The PWA cannot be installed.
 - The contact form loses submitted information.
 
-### 18.3 Medium
+### Medium
 
 The feature works incorrectly but a workaround exists.
 
@@ -449,7 +449,7 @@ Examples:
 - An image is missing while the lesson text remains available.
 - A non-critical offline package update is delayed.
 
-### 18.4 Low
+### Low
 
 The issue does not prevent the user from completing the task.
 
@@ -460,7 +460,7 @@ Examples:
 - Slight colour difference.
 - Non-critical text-wrapping issue.
 
-## 19. Defect Report Format
+## Defect report format
 
 Each defect should include:
 
@@ -478,7 +478,7 @@ Screenshot or recording:
 Related requirement:
 ~~~
 
-### 19.1 Example Defect Report
+### Example defect report
 
 ~~~text
 Title: Lesson progress is duplicated after reconnection
@@ -507,7 +507,7 @@ Severity:
 High
 ~~~
 
-## 20. Regression Testing
+## Regression esting
 
 Regression testing should be completed after changes to:
 
@@ -533,7 +533,7 @@ Student PWA
 
 The team should not assume that a component that works on the homepage will automatically work correctly inside the learning experience.
 
-## 21. Definition of Done
+## Definition of Done
 
 A frontend task is complete when:
 
@@ -551,7 +551,7 @@ A frontend task is complete when:
 - No critical or high-severity defects remain open.
 - Final regression testing is complete.
 
-## 22. QA Sign-Off Checklist
+## QA sign-off checklist
 
 Before a release or demonstration, the team should confirm:
 
@@ -581,7 +581,7 @@ Before a release or demonstration, the team should confirm:
 [ ] QA results have been reviewed by the team
 ~~~
 
-## 23. QA Summary
+## QA summary
 
 The Redu QA process ensures that the product is visually consistent, technically reliable and suitable for real learning conditions.
 

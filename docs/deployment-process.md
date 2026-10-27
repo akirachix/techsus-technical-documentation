@@ -1,6 +1,6 @@
-# 8. Deployment & DevOps
+# Deployment & DevOps
 
-## 8.1 Overview
+## Overview
 
 This section explains how the Redu platform is built, deployed and monitored. It covers the Next.js PWA frontend, the FastAPI backend on Heroku and the database, and it is written so a new team member can ship a change without help.
 
@@ -14,7 +14,7 @@ API documentation: [https://redu-8a6d68a6558b.herokuapp.com/docs](https://redu-8
 
 ---
 
-## 8.2 Deployment architecture
+## Deployment architecture
 
 ```text
 Learner device (phone, tablet, school computer)
@@ -40,7 +40,7 @@ progress, conversations  AI tutor
 
 ---
 
-## 8.3 Environments
+## Environments
 
 | Environment | Frontend | Backend |
 |---|---|---|
@@ -49,7 +49,7 @@ progress, conversations  AI tutor
 
 ---
 
-## 8.4 Environment variables
+## Environment variables
 
 Secrets are never committed to the repository. They are set in the hosting dashboard for each service, and locally in a `.env` file that is listed in `.gitignore`.
 
@@ -72,7 +72,7 @@ Secrets are never committed to the repository. They are set in the hosting dashb
 
 ---
 
-## 8.5 Frontend deployment
+## Frontend deployment
 
 The Next.js frontend is deployed on Vercel and served over HTTPS. HTTPS is required for a PWA, because browsers only allow service workers on secure connections.
 
@@ -95,7 +95,7 @@ When a new version is published, the service worker downloads it in the backgrou
 
 ---
 
-## 8.6 Backend deployment
+## Backend deployment
 
 The FastAPI backend runs on Heroku. A `Procfile` at the root of the backend repository tells Heroku how to start the app.
 
@@ -116,7 +116,7 @@ A healthy service returns `200 OK` with a JSON response. The same endpoint can b
 
 ---
 
-## 8.7 Database
+## Database
 
 The backend connects to a PostgreSQL database through the `DATABASE_URL` variable. Schema changes are made with migration scripts, never by editing tables by hand.
 
@@ -124,7 +124,7 @@ Before running a migration in production, test it locally first. Take a backup o
 
 ---
 
-## 8.8 CI/CD
+## CI/CD
 
 Every change follows the same path:
 
@@ -140,7 +140,7 @@ feature branch --> pull request --> review --> main --> Vercel (frontend) + Hero
 
 ---
 
-## 8.9 Monitoring and logs
+## Monitoring and logs
 
 | What | Where | Why |
 |---|---|---|
@@ -151,7 +151,7 @@ feature branch --> pull request --> review --> main --> Vercel (frontend) + Hero
 
 ---
 
-## 8.10 Rollback
+## Rollback
 
 If a release causes problems:
 
@@ -161,7 +161,7 @@ If a release causes problems:
 
 ---
 
-## 8.11 Troubleshooting
+## Troubleshooting
 
 | Problem | Likely cause | Fix |
 |---|---|---|

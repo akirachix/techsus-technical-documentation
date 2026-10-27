@@ -1,6 +1,6 @@
-## 1. Home
+## Home
 
-### 1.1 Purpose
+### Purpose
 
 The Redu home page introduces the platform and explains how it supports refugee secondary-school learners in Uganda. It communicates the problem Redu addresses, presents the main solution features and guides visitors towards learning more or contacting the team.
 
@@ -8,7 +8,7 @@ The page is designed for learners, families, schools, education partners, NGOs, 
 
 Redu informatiional website : https://techsus-informational-website.vercel.app/
 
-### 1.2 Main Message
+### Main Message
 
 The home page communicates Redu’s central message:
 
@@ -18,7 +18,7 @@ Redu helps learners access curriculum-grounded lessons, practice, simpler explan
 
 ![alt text](assets/images/get-started.png)
 
-### 1.3 Home Page Structure
+### Home Page Structure
 
 The homepage follows a simple flow:
 
