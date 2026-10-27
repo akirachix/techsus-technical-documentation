@@ -157,34 +157,6 @@ The core learner journey should be tested from beginning to end.
 
 The flow should be tested with both a new learner and a returning learner.
 
-## Visual QA
-
-Visual QA confirms that the implementation follows the approved Redu design and brand guidelines.
-
-The review should check:
-
-- Logo placement and size.
-- Correct blue, cool white and maroon colours.
-- Typography hierarchy.
-- Button styles.
-- Card spacing.
-- Icon alignment.
-- Image quality and cropping.
-- Borders, radius and shadows.
-- Mobile menu layout.
-- Form layout.
-- Lesson-content spacing.
-- Empty states.
-- Loading states.
-- Success states.
-- Error states.
-- Selected, active and disabled states.
-- Text wrapping on small screens.
-
-The informational website and the student PWA may use different layouts, but they should remain recognisably part of the same Redu product.
-
-Visual testing should compare the implementation with the approved design, wireframe or component specification rather than relying only on personal preference.
-
 ## Responsive testing
 
 The Redu interface must remain usable on shared smartphones, tablets and desktop computers.
@@ -507,7 +479,7 @@ Severity:
 High
 ~~~
 
-## Regression esting
+## Regression testing
 
 Regression testing should be completed after changes to:
 
@@ -552,8 +524,6 @@ A frontend task is complete when:
 - Final regression testing is complete.
 
 ## QA sign-off checklist
-
-Before a release or demonstration, the team should confirm:
 
 ~~~text
 [ ] Website navigation works
@@ -602,5 +572,3 @@ Reconnect without losing work
     ↓
 Access only their own information
 ~~~
-
-QA is complete only when the interface works for the learner’s real environment, not only when it works on a developer’s computer.

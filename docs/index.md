@@ -1,31 +1,35 @@
-## Home
-
 ### Purpose
 
-The Redu home page introduces the platform and explains how it supports refugee secondary-school learners in Uganda. It communicates the problem Redu addresses, presents the main solution features and guides visitors towards learning more or contacting the team.
+The Redu homepage introduces the platform to refugee learners, families, and NGO partners in Uganda. It explains the core product features and separates public information from the student learning application.
 
-The page is designed for learners, families, schools, education partners, NGOs, trainers and potential supporters. It is an informational website, separate from the student learning interface.
+**Live link:** [Redu Informational Website](https://vercel.app)
 
-Redu informatiional website : https://techsus-informational-website.vercel.app/
+---
 
 ### Main Message
 
-The home page communicates Redu’s central message:
-
 > **Learning that keeps going.**
 
-Redu helps learners access curriculum-grounded lessons, practice, simpler explanations and offline learning support despite limited connectivity, interrupted education and limited access to learning materials.
+Redu delivers curriculum-grounded lessons, simple explanations, and offline support for low-connectivity environments.
 
-![alt text](assets/images/get-started.png)
+![Redu Get Started Flow](assets/images/get-started.png)
+
+---
 
 ### Home Page Structure
 
-The homepage follows a simple flow:
+#### 1. Hero & onboarding
+Introduces the value proposition ("Learning should not stop at the edge of a weak signal") and provides direct onboarding links for students.
 
-The learner can easily sign in and start learning !!
+![Student Registration Flow](assets/images/create.png)
 
-![alt text](assets/images/create.png)
+#### 2. Core pillars
+*   **Curriculum-grounded:** Aligned with the Ugandan secondary-school curriculum (English and Sciences).
+*   **Personal tutor:** Simplified, language-aware explanations for multilingual learners.
+*   **Offline-first:** Lightweight downloads built for shared devices and expensive mobile data.
+*   **Formative assessments:** Feedback focused on understanding mistakes rather than just scores.
 
-Our current subjects are english and the sciences
+![Student Learning Dashboard](assets/images/homepage.png)
 
-![alt text](assets/images/homepage.png)
+#### 3. Team & contact
+Introduces the Techsus development team and provides a contact form to capture NGO and educational partnerships.

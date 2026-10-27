@@ -75,13 +75,3 @@
 
 ---
 
-
-## Related
-
-- [How It Works](how-it-works.md)
-- [Frontend (PWA)](frontend.md)
-- [Backend](backend.md)
-- [Security & Compliance](security.md)
-- [QA Process](qa-process.md)
-- [Product Requirements Document (PRD)](https://docs.google.com/document/d/1ZzsUonfYsgqL1A5Ih9aDHilT-tGYrnPQ-BfTSA_OyJs/edit?tab=t.0)
-- [Epics (Google Sheets)](https://docs.google.com/spreadsheets/d/1rD7Y3wKs-LmZJf6zB07T2KOn6BF9-ykpCh5Ib4KandE/edit?usp=sharing)

@@ -1,0 +1,1295 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../qa-process/">
+      
+      
+        <link rel="next" href="../deployment-process/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/redu_icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Code Standards - Techsus Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#code-standards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Techsus Technical Documentation" class="md-header__button md-logo" aria-label="Techsus Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/redu_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Techsus Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code Standards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Techsus Technical Documentation" class="md-nav__button md-logo" aria-label="Techsus Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/redu_icon.png" alt="logo">
+
+    </a>
+    Techsus Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brand-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand Guideline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend (PWA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend & Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QA Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Standards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code style rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code style rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend (Python)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend (Next.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Both
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing standards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-and-review-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git and review standards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-merge-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-merge checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment & DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD enforcement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code style rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code style rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend (Python)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend (Next.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Both
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing standards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-and-review-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git and review standards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-merge-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-merge checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="code-standards">Code Standards</h1>
+<h2 id="overview">Overview</h2>
+<p>This section describes the rules every contributor follows so the Redu codebase stays consistent, readable and safe to change. In both the backend and the frontend, these rules are not only guidelines. They are checked automatically, and code that fails the checks cannot be merged.</p>
+<p>Frontend repository: <a href="https://github.com/akirachix/techsus-frontend">techsus-frontend</a></p>
+<p>Backend repository: <a href="https://github.com/akirachix/techsus-backend">techsus-backend</a></p>
+<hr />
+<h2 id="tools">Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>Ruff (<code>ruff check</code>)</td>
+<td>Linting: finds bugs, unused code and bad patterns</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>Ruff (<code>ruff format</code>)</td>
+<td>Formatting: keeps the code style identical across the team</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>pytest and pytest-cov</td>
+<td>Runs the automated tests and measures coverage</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>uv</td>
+<td>Runs every tool inside the project environment</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>npm lint script</td>
+<td>Linting: finds errors and bad patterns in the Next.js code</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>Prettier 3.6.2</td>
+<td>Formatting: keeps the code style identical across the team</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>npm build script</td>
+<td>Confirms the whole app compiles for production</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="backend-checks">Backend checks</h2>
+<p>Run these three commands from the root of the backend repository before every push. They are the same commands the CI/CD pipeline runs.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>ruff<span class="w"> </span>check<span class="w"> </span>.
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>ruff<span class="w"> </span>format<span class="w"> </span>--check<span class="w"> </span>.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>uv<span class="w"> </span>run<span class="w"> </span>--no-sync<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="w"> </span>--cov-report<span class="o">=</span>term-missing
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ruff check .</code></td>
+<td>Lints every file and lists problems</td>
+</tr>
+<tr>
+<td><code>ruff format --check .</code></td>
+<td>Reports files that are not formatted correctly, without changing them</td>
+</tr>
+<tr>
+<td><code>pytest --cov --cov-report=term-missing</code></td>
+<td>Runs all tests and prints which lines are not covered by a test</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>--no-sync</code> flag tells <code>uv</code> to use the environment as it is, without reinstalling packages first. This keeps the run fast and makes it behave the same way in CI.</p>
+<p>If a check fails, these commands fix most issues automatically:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check<span class="w"> </span>.<span class="w"> </span>--fix
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>format<span class="w"> </span>.
+</span></code></pre></div>
+<p>Then run the three checks again to confirm everything passes.</p>
+<hr />
+<h2 id="frontend-checks">Frontend checks</h2>
+<p>Run these commands from the root of the frontend repository before every push.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>npm<span class="w"> </span>run<span class="w"> </span>lint
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>npx<span class="w"> </span>prettier@3.6.2<span class="w"> </span>--check<span class="w"> </span>.
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm install</code></td>
+<td>Installs the exact packages the project needs</td>
+</tr>
+<tr>
+<td><code>npm run lint</code></td>
+<td>Checks the code for errors and bad patterns</td>
+</tr>
+<tr>
+<td><code>npx prettier@3.6.2 --check .</code></td>
+<td>Reports files that are not formatted correctly, without changing them</td>
+</tr>
+<tr>
+<td><code>npm run build</code></td>
+<td>Compiles the app for production and fails if anything is broken</td>
+</tr>
+</tbody>
+</table>
+<p>The Prettier version is fixed at <code>3.6.2</code>, so every developer and the CI/CD pipeline format the code in exactly the same way.</p>
+<p>If the format check fails, this command fixes the formatting automatically:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>prettier@3.6.2<span class="w"> </span>--write<span class="w"> </span>.
+</span></code></pre></div>
+<p>Then run the checks again to confirm everything passes.</p>
+<p>A passing build matters for a PWA, because a broken build would stop learners from receiving updates.</p>
+<hr />
+<h2 id="cicd-enforcement">CI/CD enforcement</h2>
+<p>The same checks run automatically on every pull request, in both repositories.</p>
+<ol>
+<li>A developer opens a pull request.</li>
+<li>The pipeline runs the checks for that repository: lint, format check and tests for the backend, lint, format check and build for the frontend.</li>
+<li>If any step fails, the pull request is marked as failed and must be fixed before merging.</li>
+<li>When all steps pass and a teammate approves, the change can be merged into <code>main</code>.</li>
+<li>The merge triggers deployment, as described in <a href="../deployment-process/">Deployment &amp; DevOps</a>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Backend:   push --&gt; lint --&gt; format check --&gt; tests + coverage --&gt; review --&gt; merge --&gt; deploy
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Frontend:  push --&gt; lint --&gt; format check --&gt; build --&gt; review --&gt; merge --&gt; deploy
+</span></code></pre></div>
+<p>Because the checks run on every pull request, broken or badly formatted code never reaches production.</p>
+<hr />
+<h2 id="code-style-rules">Code style rules</h2>
+<h3 id="backend-python">Backend (Python)</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files and functions</td>
+<td><code>snake_case</code>, for example <code>get_topic</code></td>
+</tr>
+<tr>
+<td>Classes and schemas</td>
+<td><code>PascalCase</code>, for example <code>AITutorConversationSummary</code></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr>
+<td>Type hints</td>
+<td>Add type hints to function parameters and return values</td>
+</tr>
+<tr>
+<td>Routes</td>
+<td>Group under <code>/api/v1</code> and give each route a clear summary for the <code>/docs</code> page</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frontend-nextjs">Frontend (Next.js)</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Components</td>
+<td><code>PascalCase</code> names and files, for example <code>LessonCard</code></td>
+</tr>
+<tr>
+<td>Functions and variables</td>
+<td><code>camelCase</code>, for example <code>getLessons</code></td>
+</tr>
+<tr>
+<td>Constants</td>
+<td><code>UPPER_SNAKE_CASE</code></td>
+</tr>
+<tr>
+<td>Components</td>
+<td>Keep them small and focused on one job</td>
+</tr>
+<tr>
+<td>Environment variables</td>
+<td>Use <code>NEXT_PUBLIC_</code> only for values that are safe to show in the browser</td>
+</tr>
+</tbody>
+</table>
+<h3 id="both">Both</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Names</td>
+<td>Use clear names. Write <code>topic_id</code> or <code>topicId</code>, not <code>t</code></td>
+</tr>
+<tr>
+<td>Functions</td>
+<td>Do one job and stay short enough to read without scrolling</td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>Explain why something is done, not what the code already says</td>
+</tr>
+<tr>
+<td>Secrets</td>
+<td>Never write keys, passwords or tokens in code. Read them from environment variables</td>
+</tr>
+<tr>
+<td>Unused code</td>
+<td>Delete it instead of commenting it out</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="testing-standards">Testing standards</h2>
+<p>Every new feature or bug fix comes with tests. A good test set covers four kinds of cases:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it checks</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Happy path</td>
+<td>The normal, correct use</td>
+<td>Get a topic that exists and receive <code>200</code></td>
+</tr>
+<tr>
+<td>Negative</td>
+<td>Wrong or invalid input</td>
+<td>Get a topic that does not exist and receive <code>404</code></td>
+</tr>
+<tr>
+<td>Boundary</td>
+<td>Limits of allowed values</td>
+<td>Smallest and largest accepted values</td>
+</tr>
+<tr>
+<td>Edge</td>
+<td>Unusual but possible situations</td>
+<td>Empty list of topics, missing optional fields</td>
+</tr>
+</tbody>
+</table>
+<p>Backend test files are named <code>test_*.py</code>, and each test name describes the situation it covers. The coverage report from <code>--cov-report=term-missing</code> lists lines with no test, and contributors use it to find gaps.</p>
+<hr />
+<h2 id="git-and-review-standards">Git and review standards</h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Branches</td>
+<td>Work on a separate branch, never directly on <code>main</code></td>
+</tr>
+<tr>
+<td>Commits</td>
+<td>Small commits with a short message that says what changed</td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>One purpose per pull request, with a clear description</td>
+</tr>
+<tr>
+<td>Review</td>
+<td>At least one teammate reviews before merging</td>
+</tr>
+<tr>
+<td>Checks</td>
+<td>All CI checks must pass before merging</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pre-merge-checklist">Pre-merge checklist</h2>
+<p>Before asking for a review, confirm that:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Backend: <code>ruff check .</code> and <code>ruff format --check .</code> pass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Backend: all tests pass and new code has tests</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Frontend: <code>npm run lint</code>, <code>npx prettier@3.6.2 --check .</code> and <code>npm run build</code> pass</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No secrets or <code>.env</code> files are committed</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The pull request description explains the change</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../qa-process/" class="md-footer__link md-footer__link--prev" aria-label="Previous: QA Process">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                QA Process
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../deployment-process/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment &amp; DevOps">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Deployment & DevOps
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.top", "toc.follow", "content.code.copy", "navigation.sections", "navigation.expand", "search.highlight", "search.suggest", "search.share", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

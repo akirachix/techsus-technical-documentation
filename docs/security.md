@@ -121,11 +121,3 @@ All of the following must be completed before the learner pilot.
 - GDPR and ISO/IEC 27001 as benchmarks where EU funders or partners are involved.
 - AI provider data-processing terms approved before deployment, covering no-training terms, retention and processing location.
 
-## Related
-
-- [Product Requirements Document (PRD)](https://docs.google.com/document/d/1ZzsUonfYsgqL1A5Ih9aDHilT-tGYrnPQ-BfTSA_OyJs/edit?tab=t.0)
-- [Architecture](architecture.md)
-- [Frontend (PWA)](frontend.md): session handling and offline storage
-- [Backend](backend.md): authentication and authorization
-- [Features](features.md): the AI tutor and its guardrails
-- [QA Process](qa-process.md): test coverage
