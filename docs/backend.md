@@ -89,7 +89,7 @@ Secrets are never committed to the repository. Locally they are kept in a `.env`
 | `REDU_AUTH_SECRET` | Secret key used to sign login tokens |
 | `GEMINI_API_KEY` | Key for the Gemini AI tutor service |
 
-See [Deployment & DevOps](deployment-devops.md) for the frontend variable and the production setup.
+See [Deployment & DevOps](deployment-process.md) for the frontend variable and the production setup.
 
 ---
 
@@ -206,4 +206,4 @@ Tests cover happy path, negative, boundary and edge cases. The full rules are in
 
 ## Deployment
 
-The backend is deployed on Heroku when a change is merged into `main`. Steps, rollback and troubleshooting are in [Deployment & DevOps](deployment-devops.md).
+The backend is deployed on Heroku when a change is merged into `main`. Steps, rollback and troubleshooting are in [Deployment & DevOps](deployment-process.md).
