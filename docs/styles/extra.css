@@ -373,4 +373,8 @@ body,
   margin: 0 !important;
   border: none !important;
 }
+
+.md-typeset strong {
+  color: var(--redu-primary);
+  font-weight: 600;
 }
