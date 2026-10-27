@@ -1,6 +1,6 @@
-# 7. Code Standards
+# Code Standards
 
-## 7.1 Overview
+## Overview
 
 This section describes the rules every contributor follows so the Redu codebase stays consistent, readable and safe to change. In both the backend and the frontend, these rules are not only guidelines. They are checked automatically, and code that fails the checks cannot be merged.
 
@@ -10,7 +10,7 @@ Backend repository: [techsus-backend](https://github.com/akirachix/techsus-backe
 
 ---
 
-## 7.2 Tools
+## Tools
 
 | Part | Tool | Purpose |
 |---|---|---|
@@ -24,7 +24,7 @@ Backend repository: [techsus-backend](https://github.com/akirachix/techsus-backe
 
 ---
 
-## 7.3 Backend checks
+## Backend checks
 
 Run these three commands from the root of the backend repository before every push. They are the same commands the CI/CD pipeline runs.
 
@@ -53,7 +53,7 @@ Then run the three checks again to confirm everything passes.
 
 ---
 
-## 7.4 Frontend checks
+## Frontend checks
 
 Run these commands from the root of the frontend repository before every push.
 
@@ -85,7 +85,7 @@ A passing build matters for a PWA, because a broken build would stop learners fr
 
 ---
 
-## 7.5 CI/CD enforcement
+## CI/CD enforcement
 
 The same checks run automatically on every pull request, in both repositories.
 
@@ -104,7 +104,7 @@ Because the checks run on every pull request, broken or badly formatted code nev
 
 ---
 
-## 7.6 Code style rules
+## Code style rules
 
 ### Backend (Python)
 
@@ -138,7 +138,7 @@ Because the checks run on every pull request, broken or badly formatted code nev
 
 ---
 
-## 7.7 Testing standards
+## Testing standards
 
 Every new feature or bug fix comes with tests. A good test set covers four kinds of cases:
 
@@ -153,7 +153,7 @@ Backend test files are named `test_*.py`, and each test name describes the situa
 
 ---
 
-## 7.8 Git and review standards
+## Git and review standards
 
 | Rule | Detail |
 |---|---|
@@ -165,7 +165,7 @@ Backend test files are named `test_*.py`, and each test name describes the situa
 
 ---
 
-## 7.9 Pre-merge checklist
+## Pre-merge checklist
 
 Before asking for a review, confirm that:
 
