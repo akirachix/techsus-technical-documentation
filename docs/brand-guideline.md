@@ -44,10 +44,6 @@ The final logo concept can be described as:
 > **An open door to continued learning and future opportunity.**
 
 
-
-
-
-
 ### 2.4 Colour Palette
 
 Redu uses deep blue, cool white and maroon to create a mature, calm and trustworthy visual identity.
@@ -58,10 +54,9 @@ Redu uses deep blue, cool white and maroon to create a mature, calm and trustwor
 | Deep Blue | `#0F2747` | Dark sections and hover states |
 | Cool White | `#F7F9FC` | Main background |
 | Pure White | `#FFFFFF` | Cards and content surfaces |
-
 | Border Grey | `#D8E0EA` | Borders and dividers |
 
-docs/assets/images/redu.png
+<img src="../assets/images/styleguide.png" alt="Style Guide" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 
 
 ### 2.5 Typography
@@ -87,7 +82,7 @@ Buttons should describe the action clearly:
 
 ![alt text](assets/images/icons.png)
 
-for the informational website
+**For the informational website**
 
 ![alt text](assets/images/landing.png)
 

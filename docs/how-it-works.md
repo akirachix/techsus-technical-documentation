@@ -7,7 +7,7 @@ Redu is a Progressive Web App (PWA) that helps refugee learners in Senior 1 and 
 
 ## The learner journey
 
-[Redu user flows](https://miro.com/app/board/uXjVHhT12Tw=/?share_link_id=339217939856)
+<a href="../assets/images/userflow.png" target="_blank">Userflow</a>
 
 
 ## System architecture
@@ -30,11 +30,3 @@ Redu is a Progressive Web App (PWA) that helps refugee learners in Senior 1 and 
 
 Redu is responsive, so the same experience works on smartphones, tablets and school computers, including shared devices.
 
-
-## Related
-
-- [Product Requirements Document (PRD)](https://docs.google.com/document/d/1ZzsUonfYsgqL1A5Ih9aDHilT-tGYrnPQ-BfTSA_OyJs/edit?tab=t.0)
-- [User flows (Miro)](https://miro.com/app/board/uXjVHhT12Tw=/?share_link_id=339217939856)
-- [Features](features.md)
-- [Architecture](architecture.md)
-- [Frontend (PWA)](frontend.md)

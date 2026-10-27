@@ -7,7 +7,7 @@ theme:
   palette:
     - scheme: default
       primary: white
-      accent: light blue
+      accent: blue
   font:
     text: Nunito
     code: Fira Mono
@@ -17,12 +17,11 @@ theme:
     - toc.follow
     - content.code.copy
     - navigation.sections
-    - navigation.instant
     - navigation.expand
-    - toc.integrate
     - search.highlight
     - search.suggest
     - search.share
+    - navigation.footer
 
 extra:
   generator: false
@@ -37,7 +36,7 @@ nav:
   - Architecture: architecture.md
   - Brand Guideline: brand-guideline.md
   - Frontend (PWA): frontend.md
-  - Backend: backend.md
+  - Backend & Database: backend.md
   - Security & Compliance: security.md
   - QA Process: qa-process.md
   - Code Standards: code-standards.md
@@ -49,31 +48,9 @@ markdown_extensions:
   - md_in_html
   - tables
   - pymdownx.details
-  - Product:
-      - Overview: overview.md
-      - How It Works: how-it-works.md
-      - Features: features.md
-  - Design:
-      - Architecture: architecture.md
-      - Data Model: data-model.md
-      - Brand Guideline: brand-guideline.md
-  - Engineering:
-      - Frontend (PWA): frontend.md
-      - Backend & Database: backend.md
-      - AI Tutor: ai-tutor.md
-  - Quality & Security:
-      - Security & Compliance: security.md
-      - QA Process: qa-process.md
-  - Operations:
-      - Getting Started: getting-started.md
-      - Code Standards: code-standards.md
-      - Deployment & DevOps: deployment-process.md
-
-markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
-  - pymdownx.superfences
   - pymdownx.superfences

@@ -118,21 +118,3 @@ The administrator signs in on the same PWA. The System Management module request
 
 ---
 
-## Authentication & Authorization Flow
-
-### Shared Onboarding page
-Learners and administrators use **the same sign-in page**. After the credentials are verified, the Redu API returns a session token that carries the user's role (`learner` or `admin`). **[Add: token type and duration, e.g. JWT bearer token]**. The PWA sends this token with every request to the Redu API.
-
-### Role-Based Access Control (RBAC)
-Access is enforced at both the client and the server:
-
-* **Frontend Guarding (PWA)**: After sign-in the PWA reads the user's role and shows only the matching screens. Learners never see admin pages and administrators do not see learner study screens.
-* **Backend Guarding (Redu API)**: Every protected endpoint verifies the token and checks the role on the server. Learner endpoints work only on the signed-in learner's own data, and administrator endpoints return only system-wide data. A request that tries to bypass the interface receives `403 Forbidden`.
-
----
-
-## External Services
-Secrets and configuration are provided through environment variables.
-
-* **Google Gemini 3.8 Flash**: Generates lesson content and evaluates answers from the curriculum files.
-* **Gemini Files API**: Stores and retrieves the curriculum Markdown files and textbook images.

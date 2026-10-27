@@ -1,5 +1,5 @@
-   site/
-   venv/
-   .venv/
-   __pycache__/
-   .DS_Store
+site/
+venv/
+.venv/
+__pycache__/
+.DS_Store
