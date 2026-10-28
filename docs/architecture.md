@@ -3,17 +3,21 @@
 ---
 
 ## Overview
-Redu is a **Progressive Web App (PWA)** backed by a single, centralized **Redu API**. There is **one PWA** for everyone: learners and administrators sign in through the same interface, and **role-based access control (RBAC)** decides which screens and features each user sees. Redu is web-only; there is no native mobile app.
+Redu is a learner-support platform intended to provide structured learning, assessments, and guided tutoring in low-connectivity settings. The project is designed around a single client experience for learners and administrators, supported by a backend service and an AI-assisted learning flow.
 
-The Learn and Assessments modules use a shared **AI Service**, which finds the right curriculum Markdown file, passes its file URI to **Gemini 3.8 Flash**, and returns content generated from the available files. Only the Redu API reads from or writes to the database.
+> Status: This page describes the intended Redu architecture and should be treated as a design-level proposal until the implementation repositories, deployment configuration, and runtime behavior are verified. The items below are written as planned architecture, not confirmed production implementation.
 
-* **Client Application**: One PWA (learner and admin share the same sign-in and interface), deployed on **Vercel**. **[Add: frontend framework, e.g. React / Next.js]**
-* **Backend Integration Layer**: **FastAPI**, deployed on **Heroku**.
-* **Persistence Layer**: **PostgreSQL** database on **Heroku**.
-* **AI Integration & Grounding**: **Google Gemini 3.8 Flash**, grounded on curriculum **Markdown** files stored in the **Gemini Files API**.
-* **Offline Storage**: **IndexedDB** in the learner's browser, which holds downloaded lessons for offline use.
+The system is expected to include a web application, an application programming interface, a shared AI tutoring layer, and storage for learner progress and curriculum data. In the proposed design, the application is organized around a PWA frontend, a centralized API, and AI-grounded lesson content served from curriculum sources.
 
-The PWA talks only to the Redu API. Modules never call each other, the AI Service never calls back into a module, and no module reads or writes the database directly.
+### Proposed architecture at a glance
+
+* **Client application**: one PWA used by learners and administrators; frontend framework and runtime implementation are still **planned/to be confirmed**.
+* **Backend layer**: a centralized API service, expected to use **FastAPI**; host and deployment details are **planned/to be confirmed**.
+* **Persistence layer**: expected to use **PostgreSQL** for learner data, progress, assessments, and curriculum metadata; hosting model is **planned/to be confirmed**.
+* **AI layer**: planned to use **Google Gemini** with curriculum content grounded in Markdown files and retrieved through an AI file-handling flow.
+* **Offline support**: planned to use browser storage such as **IndexedDB** to persist downloaded learning content for offline access.
+
+The proposed design assumes a clean separation of responsibilities: the client does not directly access the database, the AI service is used as a supporting capability rather than a primary workflow controller, and the API is the central access point for application logic.
 
 ---
 
@@ -22,99 +26,117 @@ The PWA talks only to the Redu API. Modules never call each other, the AI Servic
     <img src="../assets/images/SAD.png" alt="Redu System Architecture Diagram" style="max-width: 100%; border-radius: 4px; display: block; margin: 0 auto;">
 </div>
 
-
 System Architecture diagram (Lucidspark): [Redu System Architecture Diagram](https://lucid.app/lucidspark/4841b8d1-a8d3-4e68-a6dc-c8f61c3e7c1f/edit?invitationId=inv_02c4820d-c473-464a-9bac-d6ad10fc0f39&page=0_0#)
+
+> Note: This diagram should be read as a design artifact. It reflects the proposed system model and should be validated against actual implementation evidence before being treated as current architecture.
 
 ---
 
 ## Application Components
 
 ### Progressive Web App (PWA)
-The single client application, deployed on Vercel. It can be installed on a phone or computer and works offline for downloaded lessons. After sign-in, the PWA shows learner screens or administrator screens depending on the user's role.
+The PWA is the user-facing layer for learner interaction. In the proposed design, it supports onboarding, lesson delivery, assessments, progress tracking, and downloadable content for offline use. The interface is expected to differentiate learner and administrator views based on user role.
 
-* **Learner view**: select a subject, topic and lesson; read AI-generated lesson content; take diagnostics, practice sets and quizzes; view progress; download lessons for offline use.
-* **Admin view**: system management, usage and engagement analytics.
+* **Learner view**: select a subject, topic, and lesson; review AI-assisted lesson content; complete diagnostics and quizzes; view progress; download lessons for offline use.
+* **Admin view**: monitor usage, engagement, and system-level information.
 
-### Redu API (FastAPI)
-The central engine of the system, deployed on Heroku. It signs users in, checks their role, routes each request to the right module, validates data and is the **only component that talks to PostgreSQL**.
+### Redu API
+The API is intended to be the central service layer for the platform. In the proposed design, it authenticates users, enforces access rules, coordinates feature modules, validates data, and acts as the only application-level component that interacts with persistent storage.
 
 ### Feature Modules
-| Module | What it does | Uses the AI Service |
+| Module | Planned responsibility | Uses the AI service |
 |---|---|---|
-| **Learn** | Lists subjects, topics and lessons, generates lesson content, answers learner questions and records lesson progress. | Yes |
-| **Assessments** | Starts assessments, evaluates answers, gives feedback and a catch-up plan. | Yes |
-| **View Progress** | Shows completed lessons and evaluation results. | No |
-| **Offline Packages** | Prepares downloadable lessons and returns them to the learner's device. | No |
-| **System Management** | Provides system-wide usage and engagement data to the administrator. | No |
+| **Learn** | Display curriculum, generate lesson content, answer learner questions, and record lesson progress. | Yes |
+| **Assessments** | Manage assessments, evaluate answers, provide feedback, and produce catch-up guidance. | Yes |
+| **View Progress** | Show completed lessons and assessment results. | No |
+| **Offline Packages** | Prepare downloadable learning content for use without network access. | No |
+| **System Management** | Provide system metrics and operational information to administrators. | No |
 
 ### AI Service
-Shared by the Learn and Assessments modules. It looks through the curriculum Markdown files, extracts the **file URI** of the right file, sends the URI and a prompt to Gemini 3.8 Flash, and returns the generated content to the module that asked. It never touches the database and never calls a module.
+The AI service is planned to support lesson generation and assessment feedback by retrieving curriculum content and grounding model responses in approved learning material. In the proposed design, it is a support component rather than a source of business logic or direct database access.
 
 ### Curriculum Markdown Files and Gemini Files API
-Lesson text is stored as Markdown files (with the related textbook images in PNG/JPEG) in a folder in the backend. A one-time seed/import script uploads them to the Gemini Files API, which manages and retrieves them for the AI.
+The curriculum is expected to be stored as Markdown content and accompanying media assets. In the proposed model, a one-time content-import process uploads the approved curriculum files to the AI platform so they can be retrieved and used by the tutor during generation.
 
 ### Database (PostgreSQL)
-Stores learner data, topics, learning content, assessments, progress, tutor interactions, offline packages and sync events. It is accessed only by the Redu API.
+The database is intended to store learner data, curriculum metadata, assessment outcomes, progress records, tutor interactions, and offline sync data. In the proposed design, this data is accessed only by the API layer.
 
 ### Offline Storage (IndexedDB)
-A browser database on the learner's device. Lessons the learner downloads while online are copied here so they can be opened later without internet.
+The browser is expected to hold downloaded learning content locally so learners can continue studying without a network connection. This support is intended to improve usability in low-connectivity environments.
 
 ---
 
-## Data Flow
+## Proposed Data Flow
 
-### Learning Flow (core flow)
+### Learning flow
 ```text
  [ Learner selects subject, topic, lesson ]
                    │
                    ▼
- [ PWA ] ──► [ Redu API ] ──► [ Learn module ] ──► [ AI Service ]
+ [ PWA ] ──► [ Redu API ] ──► [ Learn module ] ──► [ AI service ]
                                                       │
-                                   finds the Markdown file and extracts its file URI
+                                   find the relevant curriculum content and related file reference
                                                       │
                                                       ▼
-                                       [ Gemini 3.8 Flash ]
-                           (file URI + prompt → content generated from the available files)
+                                        [ Gemini model ]
+                           (file reference + prompt → grounded learning response)
                                                       │
                                                       ▼
  [ Learner sees the lesson ] ◄── [ PWA ] ◄── [ Redu API ] ◄── [ Learn module ]
                                                   │
                                                   ▼
-                                   [ Database: progress and content saved ]
+                                   [ Persistent storage: progress and lesson data ]
 ```
-1. **Choose**: The learner selects a subject, a topic and a lesson in the PWA.
-2. **Request**: The PWA sends the request to the Redu API, which passes it to the Learn module.
-3. **Find the file**: The Learn module calls the AI Service. The AI Service goes through the curriculum Markdown files and extracts the **file URI** for the chosen lesson.
-4. **Generate**: The AI Service sends the file URI and a prompt to Gemini 3.8 Flash. Gemini generates the content using only the available curriculum files and returns it.
-5. **Show and save**: The content goes back through the Redu API to the PWA. The Redu API saves the lesson content and the learner's progress in PostgreSQL.
+1. **Choose**: The learner selects a subject, topic, and lesson in the client application.
+2. **Request**: The PWA sends a request to the API, which routes the request to the learning module.
+3. **Retrieve content**: The learning module requests curriculum-grounded content from the AI service.
+4. **Generate response**: The AI service identifies the relevant curriculum resource and sends the file reference and prompt to the model.
+5. **Return result**: The response is returned through the API to the client, where it is presented to the learner and saved as needed.
 
-### Assessment Flow
-1. The learner starts an assessment. The Assessments module asks the AI Service for questions based on the lesson's Markdown file.
-2. The learner submits answers. The AI Service evaluates them against the same content and returns the result, feedback, correct answers and a catch-up plan.
-3. The Redu API saves the evaluation results and progress, and they appear in **View Progress**.
+### Assessment flow
+1. The learner starts an assessment. The assessment module requests guidance or evaluation grounded in the relevant curriculum content.
+2. The learner submits answers. The AI service evaluates the response against the approved learning material and returns feedback.
+3. The API stores the result and progress state for the learner.
 
-### Curriculum Loading Flow (one-time seed script)
-1. The team runs a **seed/import script** once, using the curriculum folders kept in the backend (Markdown lesson files and textbook images).
-2. The script uploads the files to the Gemini Files API.
-3. The script saves topics and lessons through the Redu API into the database.
-4. The same script is run again only when the Markdown files change. Admins do not upload content through the interface.
+### Curriculum-loading flow
+1. The curriculum content is prepared in a backend-managed folder as Markdown and related assets.
+2. A one-time import or seed process uploads approved curriculum files to the AI platform.
+3. The imported content is stored and then used by the application for lesson and assessment generation.
+4. The content is refreshed only when the curriculum source changes.
 
-### Offline Flow
+### Offline flow
 ```text
- [ Learner online ] ──► [ Offline Packages module via Redu API ] ──► [ PWA ]
-                                                                       │
-                                                      copies lessons into [ IndexedDB ]
-                                                                       │
- [ Learner offline ] ◄────── opens saved lessons from IndexedDB ◄─────┘
+ [ Learner online ] ──► [ Offline package flow via API ] ──► [ PWA ]
+                                                                      │
+                                                  stores downloaded lessons in [ IndexedDB ]
+                                                                      │
+ [ Learner offline ] ◄────── opens saved content from IndexedDB ◄─────┘
 ```
-1. While **online**, the learner chooses lessons to download.
-2. The Offline Packages module returns the downloaded lessons through the Redu API.
-3. The PWA **copies the lessons into IndexedDB** on the device.
-4. While **offline**, the learner opens the saved lessons from IndexedDB without any network request.
-5. Once the device is online again, offline activity is sent to the Redu API and saved.
+1. While online, the learner chooses lessons to download.
+2. The offline package flow returns the content through the API.
+3. The PWA stores the downloaded material locally.
+4. While offline, the learner can access the stored content without internet access.
+5. When connectivity returns, local progress can be synced back to the backend.
 
-### Administrator Flow
-The administrator signs in on the same PWA. The System Management module requests usage and engagement data from the Redu API, which reads it from PostgreSQL and returns system analytics.
+### Administrator flow
+The administrator is expected to sign in through the same client experience used by learners. The system-management functions are intended to request aggregated usage information from the API and display operational insights based on persisted data.
 
 ---
+
+## Status and review notes
+
+This page is intentionally written as a design brief for Redu rather than a verified implementation record. It should be updated once the real repositories, infrastructure configuration, and runtime behavior are available. At that point, the architecture should be confirmed against code, tests, deployment configuration, and live system behavior.
+
+This document is useful for:
+- product and technical planning,
+- stakeholder communication,
+- architecture review and discussion,
+- identifying likely system boundaries and responsibilities.
+
+This document is not yet a verified implementation specification until the following are available:
+- actual frontend and backend source code,
+- deployment configuration,
+- environment variables and hosting setup,
+- database schema and migration evidence,
+- tests and verification artifacts.
 

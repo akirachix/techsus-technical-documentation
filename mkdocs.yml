@@ -40,6 +40,7 @@ nav:
   - Security & Compliance: security.md
   - QA Process: qa-process.md
   - Code Standards: code-standards.md
+  - Developer Guide: developer-guide.md
   - Deployment & DevOps: deployment-process.md
 
 markdown_extensions:

@@ -2,6 +2,19 @@
 
 The Redu homepage introduces the platform to refugee learners, families, and NGO partners in Uganda. It explains the core product features and separates public information from the student learning application.
 
+> Documentation status: This site captures the Redu product vision and proposed implementation approach. It is intended to support design review and technical planning. Any architecture, API, or deployment detail that is not backed by code or deployment configuration in this repo should be treated as planned or unverified.
+
+### Evidence status
+
+| Topic | Status | Notes |
+|---|---|---|
+| Project mission and audience | Verified | Described in the documentation and product messaging |
+| Product vision | Verified as a design brief | This repo contains planning and description, not runtime evidence |
+| Architecture and backend details | Partially verified | Described as proposed system design |
+| Frontend implementation details | Partially verified | Product and UI requirements are documented; no app code is in this workspace |
+| Deployment model | Partially verified | Target deployment model is documented but not confirmed in repo |
+| Local docs build | Verified | MkDocs configuration builds successfully |
+
 **Live link:** [Redu Informational Website](https://vercel.app)
 
 ---
