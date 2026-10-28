@@ -1,8 +1,38 @@
 # Techsus_Technical_Documentation
 
+> Documentation status: This repository contains the Techsus technical documentation for Redu. It is a design and planning document for the product and its proposed architecture. Implementation details should be treated as design-level guidance until they are verified against the actual application repositories, infrastructure configuration, and deployment setup.
+>
+> Verification boundary: This workspace contains documentation assets only. Live application code, runtime behavior, infrastructure configuration, and deployment state are not verified in this repository and should be treated as proposed or unverified unless confirmed elsewhere.
+
 ## Technical Documentation Manifest
 
 Technical documentation for **Redu**, a Progressive Web App (PWA) for refugee S1-S2 learners in Uganda, built by Team Techsus.
+
+### Documentation maturity
+
+| Area | Status | Evidence in this repo |
+|---|---|---|
+| Project overview | Verified as design-level documentation | README + docs/index.md |
+| Architecture | Partially verified as proposed architecture | docs/architecture.md, diagram references |
+| Backend/API | Partially verified as target design | docs/backend.md |
+| Frontend | Partially verified as target design | docs/frontend.md |
+| Security | Partially verified as requirements and design controls | docs/security.md |
+| Deployment | Partially verified as target deployment model | docs/deployment-process.md |
+| Local docs site | Verified | MkDocs configuration and successful local build |
+| Professional app code and runtime configuration | Not available in this workspace | Not yet present in repo |
+
+This documentation set is intentionally explicit about its evidence boundary: it documents the Redu product vision and proposed implementation approach, but it is not a runtime-verified implementation record.
+
+### Review and validation automation
+
+This repository now includes lightweight review support to improve traceability and consistency:
+
+- `scripts/evidence_collector.sh` lists the key documentation and repository evidence files
+- `scripts/mkdocs_build_and_link_check.sh` runs the local docs validation build
+- `.github/workflows/ci-review.yml` runs the documentation checks in CI
+- `templates/architecture-template.md` and `templates/testing-template.md` provide starter sections for future authors
+
+These files are designed to make the documentation review process more repeatable without inventing implementation details.
 
 ### 1. Overview
 * **Product Purpose:** Plain-language explanation of what Redu does.
@@ -46,7 +76,9 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Open `http://127.0.0.1:8000/` in your browser. The site reloads when you save a file.
+Open http://127.0.0.1:8000/ in your browser. The site reloads when you save a file.
+
+> The repository URL should be replaced with the actual project remote for this documentation repo. This command is only for local documentation preview and does not imply that the Redu app or backend is available in this workspace.
 
 ### Contributing to the Docs
 * Create a branch from `main` (for example `docs/overview-draft`) and open a PR when done.

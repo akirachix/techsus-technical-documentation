@@ -1,13 +1,15 @@
 # Backend
 
 ## Overview
-The Redu backend is a FastAPI service that stores learner accounts, the curriculum, assessments and progress, and connects the Redu PWA to the AI tutor. It runs on Heroku and keeps its data in PostgreSQL.
+The Redu backend is described here as a FastAPI service that would store learner accounts, the curriculum, assessments and progress, and connect the Redu PWA to the AI tutor. This page represents a planned backend design and draft API reference, not a verified implementation record.
 
-Repository: [techsus-backend](https://github.com)
+> Verification boundary: The actual backend repository, deployment configuration, runtime behavior, and production service URLs are not verified in this workspace. Any hosting, endpoint, or configuration detail below should be treated as a proposed design or a project-level target until confirmed by the real application repository.
 
-Live API: [https://herokuapp.com](https://herokuapp.com)
+Repository reference: [techsus-backend](https://github.com)
 
-API documentation: [https://herokuapp.com/docs](https://herokuapp.com/docs)
+Planned production API target: not verified in this repo
+
+Planned API documentation target: not verified in this repo
 
 The backend has three main jobs:
 
@@ -35,7 +37,7 @@ The backend has three main jobs:
 Prerequisites: Python, uv, Git, a PostgreSQL database and a Gemini API key.
 
 ```bash
-git clone https://github.com.git
+git clone <backend-repository-url>
 cd techsus-backend
 uv sync
 ```
@@ -46,7 +48,9 @@ Create a `.env` file in the repository root with the variables from section 4.5,
 uv run fastapi dev
 ```
 
-The API runs at http://127.0.0.1:8000 and the interactive documentation is at http://127.0.0.
+The local API runs at http://127.0.0.1:8000 and the local interactive documentation is available at http://127.0.0.1:8000/docs when the service is running.
+
+> These local URLs are for developer setup only. They do not confirm that a production backend or live API is currently deployed.
 
 ---
 
@@ -99,8 +103,8 @@ FastAPI generates interactive documentation from the code. Every endpoint can be
 
 | Environment | Address |
 |---|---|
-| Local | http://127.0.0 |
-| Production | https://herokuapp.com/docs |
+| Local | http://127.0.0.1:8000/docs |
+| Production | Unverified in this repository |
 
 The page also lists the request and response schemas at the bottom, for example `AITutorConversationSummary`.
 

@@ -2,9 +2,13 @@
 
 ## Overview
 
-The Redu PWA is the app Senior 1 and Senior 2 learners use on phones, tablets and shared school computers. It keeps working offline and syncs progress when the connection returns.
+The Redu PWA is described here as the app Senior 1 and Senior 2 learners use on phones, tablets, and shared school computers. It is expected to keep working offline and sync progress when the connection returns.
 
-**Repository:** [techsus-frontend](https://github.com)  
+> Documentation status: This frontend guide reflects the intended Redu PWA design and product requirements. It should be treated as a planning document until the actual frontend repository and build setup are available for verification.
+>
+> Verification boundary: This repo does not include the live frontend application code, the production build, or the deployment configuration. Product and technical details in this section are therefore unverified unless confirmed elsewhere.
+
+**Repository reference:** [techsus-frontend](https://github.com/akirachix/techsus-frontend)  
 
 ## Main functions
 
@@ -20,7 +24,7 @@ The Redu PWA is the app Senior 1 and Senior 2 learners use on phones, tablets an
 **Prerequisites:** Node.js, npm, Git, the environment variables, and the [Backend](backend.md) running or its URL.
 
 ```bash
-git clone https://github.com.git
+git clone <frontend-repository-url>
 cd techsus-frontend
 npm install
 npm run dev

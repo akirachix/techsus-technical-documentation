@@ -2,15 +2,17 @@
 
 ## Overview
 
-This section explains how the Redu platform is built, deployed and monitored. It covers the Next.js PWA frontend, the FastAPI backend on Heroku and the database, and it is written so a new team member can ship a change without help.
+This section explains the target operating model for how the Redu platform could be built, deployed, and monitored. It covers the proposed Next.js PWA frontend, the planned FastAPI backend, and the likely database and hosting setup.
 
-Frontend repository: [techsus-frontend](https://github.com/akirachix/techsus-frontend)
+> Verification boundary: This deployment guide is a design-level rollout plan, not a verified record of the current production deployment. The actual frontend and backend repositories, hosting setup, environment configuration, and production URLs are not confirmed in this workspace.
 
-Backend repository: [techsus-backend](https://github.com/akirachix/techsus-backend)
+Frontend repository reference: [techsus-frontend](https://github.com/akirachix/techsus-frontend)
 
-Backend API: [https://redu-8a6d68a6558b.herokuapp.com](https://redu-8a6d68a6558b.herokuapp.com)
+Backend repository reference: [techsus-backend](https://github.com/akirachix/techsus-backend)
 
-API documentation: [https://redu-8a6d68a6558b.herokuapp.com/docs](https://redu-8a6d68a6558b.herokuapp.com/docs)
+Planned backend API target: not verified in this repo
+
+Planned API documentation target: not verified in this repo
 
 ---
 
